@@ -1,0 +1,31 @@
+builds:
+- id: "goit"
+  binary: goit
+  goos:
+  - linux
+  - darwin
+  goarch:
+  - amd64
+checksum:
+  name_template: 'checksums.txt'
+dist: /tmp/goit/dist
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'
+release:
+  github:
+    owner: dragno99
+    name: goit
+brews:
+- tap:
+    owner: dragno99
+    name: homebrew-tap
+  name: goit
+  homepage: "https://github.com/dragno99/goit"
+  description: "A simple text editor with multiple window."
+  folder: Formula
+  install: |
+    bin.install "goit"
